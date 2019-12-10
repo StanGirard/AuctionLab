@@ -1,15 +1,15 @@
 {
-    "react": {
+    "dev": {
         "awscloudformation": {
-            "AuthRoleName": "amplify-test-react-163524-authRole",
-            "UnauthRoleArn": "arn:aws:iam::831482984725:role/amplify-test-react-163524-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::831482984725:role/amplify-test-react-163524-authRole",
+            "AuthRoleName": "amplify-auctionlab-dev-215059-authRole",
+            "UnauthRoleArn": "arn:aws:iam::831482984725:role/amplify-auctionlab-dev-215059-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::831482984725:role/amplify-auctionlab-dev-215059-authRole",
             "Region": "eu-west-1",
-            "DeploymentBucketName": "amplify-test-react-163524-deployment",
-            "UnauthRoleName": "amplify-test-react-163524-unauthRole",
-            "StackName": "amplify-test-react-163524",
-            "StackId": "arn:aws:cloudformation:eu-west-1:831482984725:stack/amplify-test-react-163524/8560bf10-1a99-11ea-b5ac-02ac8ce49a7a",
-            "AmplifyAppId": "d2smc33bn96csz"
+            "DeploymentBucketName": "amplify-auctionlab-dev-215059-deployment",
+            "UnauthRoleName": "amplify-auctionlab-dev-215059-unauthRole",
+            "StackName": "amplify-auctionlab-dev-215059",
+            "StackId": "arn:aws:cloudformation:eu-west-1:831482984725:stack/amplify-auctionlab-dev-215059/c78157b1-1b8e-11ea-a28d-02abe6210ac8",
+            "AmplifyAppId": "d3iln0cvctdm55"
         }
     }
 }

@@ -71,10 +71,10 @@
 		"hostingS3AndCloudFront": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/amplify-test-react-163524-deployment/amplify-cfn-templates/hosting/template.json",
+				"TemplateURL": "https://s3.amazonaws.com/amplify-auctionlab-dev-215059-deployment/amplify-cfn-templates/hosting/template.json",
 				"Parameters": {
-					"bucketName": "devlup",
-					"env": "react"
+					"bucketName": "auctionlab-prod",
+					"env": "dev"
 				}
 			}
 		}
