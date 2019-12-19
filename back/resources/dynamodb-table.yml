@@ -1,17 +1,15 @@
 Resources:
   # Name of the database
-  UserTable:
+  MagaDB:
     Type: AWS::DynamoDB::Table
     Properties:
-      TableName: ${self:custom.tableName} 
+      TableName: ${self:custom.userTable} 
       AttributeDefinitions:
-        - AttributeName: userId 
-          AttributeType: S
-        - AttributeName: username 
+        - AttributeName: email
           AttributeType: S
       KeySchema:
-        - AttributeName: userId
+        - AttributeName: email
           KeyType: HASH
-        - AttributeName:  username
-          KeyType: HASH # Set the capacity
+        
+      # Set the capacity
       BillingMode: PAY_PER_REQUEST
