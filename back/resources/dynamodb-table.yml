@@ -7,10 +7,19 @@ Resources:
       AttributeDefinitions:
         - AttributeName: typeUser
           AttributeType: S
+        - AttributeName: email
+          AttributeType: S
         
       KeySchema:
-        - AttributeName: typeUser
+        - AttributeName: email
           KeyType: HASH
+      GlobalSecondaryIndexes:
+        - IndexName: fetchTypeUser
+          KeySchema:
+            - AttributeName: typeUser
+              KeyType: HASH
+          Projection:
+            ProjectionType: ALL
       
         
       # Set the capacity

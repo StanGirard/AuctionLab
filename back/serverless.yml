@@ -40,6 +40,11 @@ provider:
         # Restrict our IAM role permissions to # the specific table for the stage 
       Resource:
         - "Fn::GetAtt": [ MagaDB, Arn ]
+        - "Fn::Join":
+          - "/"
+          -
+            - { "Fn::GetAtt": [MagaDB, Arn ] }
+            - "index/*"
   # To load environment variables externally
   # rename env.example to .env and uncomment
   # the following line. Also, make sure to not

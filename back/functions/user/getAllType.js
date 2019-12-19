@@ -4,6 +4,7 @@ import { success, failure } from "../../libs/response-lib";
 export async function main(event, context) {
     const params = {
       TableName: process.env.userTable,
+      IndexName: 'fetchTypeUser',
       // 'Key' defines the partition key and sort key of the item to be retrieved
       KeyConditionExpression: "typeUser = :typeId",
       ExpressionAttributeValues: {
