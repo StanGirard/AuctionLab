@@ -1,36 +1,27 @@
-This is My boilerplate for bootstraping React Project
+# Front
 
-Below you will find some information on how to perform common tasks.<br>
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.8.
 
+## Development server
 
-## Available Scripts
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-In the project directory, you can run:
+## Code scaffolding
 
-### `npm install`
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-This is the first script to run. It installs all the necessary libraries.
+## Build
 
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-### `npm start`
+## Running unit tests
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Running end-to-end tests
 
-### `npm test`
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](#running-tests) for more information.
+## Further help
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](#deployment) for more information.
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

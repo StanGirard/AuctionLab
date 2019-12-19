@@ -1,69 +1,47 @@
 {
-  "name": "myboilerplate",
-  "version": "0.1.0",
+  "name": "front",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
   "private": true,
   "dependencies": {
-    "animate.css": "^3.7.2",
-    "classnames": "^2.2.6",
-    "font-awesome": "^4.7.0",
-    "lodash": "^4.17.13",
-    "nodemon": "^2.0.1",
-    "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-burger-menu": "^2.6.13",
-    "react-dom": "^16.12.0",
-    "react-flexview": "^4.0.4",
-    "react-notifications-component": "^2.2.4",
-    "react-redux": "^7.1.3",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.0",
-    "reapop": "^2.1.0",
-    "reapop-theme-wybo": "^1.0.2",
-    "redux": "^4.0.4",
-    "redux-actions": "^2.6.5",
-    "redux-burger-menu": "^0.2.8",
-    "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0",
-    "semantic-ui-react": "^0.88.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "lint": "esw src  --color",
-    "lint:watch": "npm run lint -- --watch"
+    "@angular/animations": "~8.2.9",
+    "@angular/common": "~8.2.9",
+    "@angular/compiler": "~8.2.9",
+    "@angular/core": "~8.2.9",
+    "@angular/forms": "~8.2.9",
+    "@angular/platform-browser": "~8.2.9",
+    "@angular/platform-browser-dynamic": "~8.2.9",
+    "@angular/router": "~8.2.9",
+    "rxjs": "~6.4.0",
+    "tslib": "^1.10.0",
+    "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "babel-polyfill": "^6.26.0",
-    "css-loader": "^3.2.1",
-    "eslint": "^6.7.2",
-    "eslint-config-google": "^0.14.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-config-standard-react": "^9.2.0",
-    "eslint-plugin-import": "^2.19.1",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.17.0",
-    "eslint-plugin-standard": "^4.0.1",
-    "eslint-watch": "^6.0.1",
-    "file-loader": "^5.0.2",
-    "style-loader": "^1.0.1",
-    "url-loader": "^3.0.0"
-  },
-  "resolutions": {
-    "**/**/node-gyp": "5.0.0"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "@angular-devkit/build-angular": "~0.803.8",
+    "@angular/cli": "~8.3.8",
+    "@angular/compiler-cli": "~8.2.9",
+    "@angular/language-service": "~8.2.9",
+    "@types/node": "~8.9.4",
+    "@types/jasmine": "~3.3.8",
+    "@types/jasminewd2": "~2.0.3",
+    "codelyzer": "^5.0.0",
+    "jasmine-core": "~3.4.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~4.1.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "~2.0.1",
+    "karma-jasmine": "~2.0.1",
+    "karma-jasmine-html-reporter": "^1.4.0",
+    "protractor": "~5.4.0",
+    "ts-node": "~7.0.0",
+    "tslint": "~5.15.0",
+    "typescript": "~3.5.3"
   }
 }
