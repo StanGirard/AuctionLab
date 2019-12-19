@@ -62,6 +62,17 @@ functions:
           path: /user/create
           method: post
           cors: true
+  getUserType:
+    handler: functions/user/getAllType.main
+    events:
+      - http:
+          path: /user/get/{type}
+          method: get
+          cors: true
+          request:
+            parameters:
+              paths:
+                type: true
 
 
 resources:
