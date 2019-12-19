@@ -7,9 +7,13 @@ Resources:
       AttributeDefinitions:
         - AttributeName: email
           AttributeType: S
+        - AttributeName: type
+          AttributeType: S
       KeySchema:
         - AttributeName: email
           KeyType: HASH
+        - AttributeName: type
+          KeyType: RANGE
         
       # Set the capacity
       BillingMode: PAY_PER_REQUEST
