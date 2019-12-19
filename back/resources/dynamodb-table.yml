@@ -1,0 +1,17 @@
+Resources:
+  # Name of the database
+  UserTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ${self:custom.tableName} 
+      AttributeDefinitions:
+        - AttributeName: userId 
+          AttributeType: S
+        - AttributeName: username 
+          AttributeType: S
+      KeySchema:
+        - AttributeName: userId
+          KeyType: HASH
+        - AttributeName:  username
+          KeyType: HASH # Set the capacity
+      BillingMode: PAY_PER_REQUEST
