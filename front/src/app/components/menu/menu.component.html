@@ -1,3 +1,22 @@
-<p>
-  menu works!
-</p>
+<div class="menuWrapper">
+  <div class="menuItem" (click)="clickOnMenuItem('clients')">
+    <i class="menuItemIcon" [inlineSVG]="'../../../assets/menuAssets/clientsIco.svg'"></i>
+    <p class="menuItemTitle"> Clients </p>
+    <i class="menuItemArrow" [ngClass]="{'menuItemArrowActive': activeMenuItems.clients}" [inlineSVG]="'../../../assets/menuAssets/arrowDown.svg'"></i>
+  </div>
+  <div class="menuItem" (click)="clickOnMenuItem('inventaires')">
+    <i class="menuItemIcon" [inlineSVG]="'../../../assets/menuAssets/inventaireIco.svg'"></i>
+    <p class="menuItemTitle"> Inventaires </p>
+    <i class="menuItemArrow" [ngClass]="{'menuItemArrowActive': activeMenuItems.inventaires}" [inlineSVG]="'../../../assets/menuAssets/arrowDown.svg'"></i>
+  </div>
+  <div class="menuItem" (click)="clickOnMenuItem('encheres')">
+    <i class="menuItemIcon" [inlineSVG]="'../../../assets/menuAssets/enchereIco.svg'"></i>
+    <p class="menuItemTitle"> Enchères </p>
+    <i class="menuItemArrow" [ngClass]="{'menuItemArrowActive': activeMenuItems.encheres}" [inlineSVG]="'../../../assets/menuAssets/arrowDown.svg'"></i>
+  </div>
+  <div class="menuItem" (click)="clickOnMenuItem('produits')">
+    <i class="menuItemIcon" [inlineSVG]="'../../../assets/menuAssets/produitsIco.svg'"></i>
+    <p class="menuItemTitle"> Produits </p>
+    <i class="menuItemArrow" [ngClass]="{'menuItemArrowActive': activeMenuItems.produits}" [inlineSVG]="'../../../assets/menuAssets/arrowDown.svg'"></i>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+@import 'src/styles.scss';
+
+.menuWrapper {
+  margin-top: 70px;
+  width: 240px;
+  height: 100vh;
+  background-color: $base-color-opacity;
+  box-shadow:  8px black;
+  display: flex;
+  flex-direction: column;
+  .menuItem {
+    width: 100%;
+    height: fit-content;
+    color: $base-white;
+    border-bottom: 0.7px solid $base-color;
+    display: flex;
+    align-items: center;
+    .menuItemIcon {
+      width: 20px;
+      height: 20px;
+      margin-left: 20px;
+      fill: $icon-color;
+    }
+    .menuItemTitle {
+      margin-left: 20px;
+      width: 100px;
+    }
+    .menuItemArrow {
+      width: 10px;
+      height: 10px;
+      fill: $icon-color;
+      margin-left: 20px;
+    }
+    .menuItemArrowActive {
+      width: 10px;
+      height: 10px;
+      fill: $icon-color;
+      margin-left: 20px;
+      transform: rotate(180deg)
+    }
+  }
+  .menuItem:hover {
+    background-color: $base-color;
+  }
+}
