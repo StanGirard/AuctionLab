@@ -1,8 +1,8 @@
 import * as create from '../functions/user/create'
-var createUserJson = require('../mocks/create-user.json');
+import {fakeBuyer, fakeSeller} from '../mocks/create-user'
 
-test('Create User', async () => {
-    const event = createUserJson;
+test('Create Fake Buyer', async () => {
+    const event = fakeBuyer();
   
     const context = 'context';
     const callback = (error, response) => {
@@ -12,4 +12,15 @@ test('Create User', async () => {
   
     await create.main(event, context, callback);
   });
+test('Create Fake Seller', async () => {
+    const event = fakeSeller();
+  
+    const context = 'context';
+    const callback = (error, response) => {
+      expect(response.statusCode).toEqual(200);
+      expect(typeof response.body).toBe("string");
+    };
+  
+    await create.main(event, context, callback);
+});
   
