@@ -1,78 +1,14 @@
-<!-- <div class="menuWrapper">
-  <div class="menuItem" (click)="clickOnMenuItem('dashboard')" [ngClass]="{'menuItemActive dashboard': activeMenuItems.dashboard}">
-      <i class="menuItemIcon" [inlineSVG]="'../../../assets/menuAssets/dashboardIco.svg'"></i>
-      <p class="menuItemTitle"> DASHBOARD </p>
-    </div>
-  <div class="menuItem" (click)="clickOnMenuItem('clients')" [ngClass]="{'menuItemActive': activeMenuItems.clients}">
-    <i *ngIf="!activeMenuItems.clients" class="menuItemIcon" [inlineSVG]="'../../../assets/menuAssets/clientsIco.svg'"></i>
-    <i *ngIf="activeMenuItems.clients" class="menuItemIcon" [inlineSVG]="'../../../assets/menuAssets/arrowDown.svg'"></i>
-    <p class="menuItemTitle"> CLIENTS </p>
-    <i *ngIf="!activeMenuItems.clients" class="menuItemArrow" [inlineSVG]="'../../../assets/menuAssets/arrowDown.svg'"></i>
+<div class="menuWrapper">
+  <div *ngFor="let menuItem of menuDatas.menus">
+  <div *ngIf="!menuItem.parent " class="menuItem" (click)=clickOnMenuItem(menuItem.name) [ngClass]="{'menuItemActive': menuItem.active}">
+      <i *ngIf="!menuItem.active || menuItem.name == 'dashboard'" class="menuItemIcon" [inlineSVG]="menuItem.icon"></i>
+      <i *ngIf="menuItem.active && menuItem.name != 'dashboard'" class="menuItemIcon" [inlineSVG]="'../../../assets/menuAssets/arrowDown.svg'"></i>
+      <p class="menuItemTitle"> {{menuItem.title}} </p>
+      <i *ngIf="!menuItem.active && menuItem.name != 'dashboard'" class="menuItemArrow" [inlineSVG]="'../../../assets/menuAssets/arrowDown.svg'"></i>
   </div>
-  <div *ngIf="activeMenuItems.clients" class="subMenu">
-    <div class="subMenuItem">
-      <i class="subMenuItemIcon" [inlineSVG]="'../../../assets/menuAssets/acheteurIco.svg'"></i>
-      <p class="subMenuItemTitle">ACHETEURS</p>
-    </div>
-    <div class="subMenuItem last">
-      <i class="subMenuItemIcon" [inlineSVG]="'../../../assets/menuAssets/vendeurIco.svg'"></i>
-      <p class="subMenuItemTitle">VENDEURS</p>
-    </div>
+  <div *ngIf="menuItem.parent && menuItem.active" class="subMenuItem" [ngClass]="{'last': menuItem.last}">
+      <i class="subMenuItemIcon" [inlineSVG]="menuItem.icon"></i>
+      <p class="subMenuItemTitle"> {{menuItem.title}} </p>
   </div>
-  <div class="menuItem" (click)="clickOnMenuItem('inventaires')" [ngClass]="{'menuItemActive': activeMenuItems.inventaires}">
-    <i *ngIf="!activeMenuItems.inventaires" class="menuItemIcon" [inlineSVG]="'../../../assets/menuAssets/inventaireIco.svg'"></i>
-    <i *ngIf="activeMenuItems.inventaires" class="menuItemIcon" [inlineSVG]="'../../../assets/menuAssets/arrowDown.svg'"></i>
-    <p class="menuItemTitle"> INVENTAIRES </p>
-    <i *ngIf="!activeMenuItems.inventaires" class="menuItemArrow" [inlineSVG]="'../../../assets/menuAssets/arrowDown.svg'"></i>
   </div>
-  <div *ngIf="activeMenuItems.inventaires" class="subMenu">
-    <div class="subMenuItem">
-      <i class="subMenuItemIcon" [inlineSVG]="'../../../assets/menuAssets/support.svg'"></i>
-      <p class="subMenuItemTitle">EN COURS</p>
-    </div>
-    <div class="subMenuItem">
-      <i class="subMenuItemIcon" [inlineSVG]="'../../../assets/menuAssets/enAttenteIco.svg'"></i>
-      <p class="subMenuItemTitle">EN ATTENTE D'ENCHERES</p>
-    </div>
-    <div class="subMenuItem last">
-      <i class="subMenuItemIcon" [inlineSVG]="'../../../assets/menuAssets/archiveIco.svg'"></i>
-      <p class="subMenuItemTitle">ARCHIVES</p>
-    </div>
-  </div>
-  <div class="menuItem" (click)="clickOnMenuItem('encheres')" [ngClass]="{'menuItemActive': activeMenuItems.encheres}">
-    <i *ngIf="!activeMenuItems.encheres" class="menuItemIcon" [inlineSVG]="'../../../assets/menuAssets/enchereIco.svg'"></i>
-    <i *ngIf="activeMenuItems.encheres" class="menuItemIcon" [inlineSVG]="'../../../assets/menuAssets/arrowDown.svg'"></i>
-    <p class="menuItemTitle"> ENCHERES </p>
-    <i *ngIf="!activeMenuItems.encheres" class="menuItemArrow" [inlineSVG]="'../../../assets/menuAssets/arrowDown.svg'"></i>
-  </div>
-  <div *ngIf="activeMenuItems.encheres" class="subMenu">
-    <div class="subMenuItem">
-      <i class="subMenuItemIcon" [inlineSVG]="'../../../assets/menuAssets/support.svg'"></i>
-      <p class="subMenuItemTitle">EN COURS</p>
-    </div>
-    <div class="subMenuItem">
-      <i class="subMenuItemIcon" [inlineSVG]="'../../../assets/menuAssets/enAttenteIco.svg'"></i>
-      <p class="subMenuItemTitle">PROCHAINES</p>
-    </div>
-    <div class="subMenuItem last">
-      <i class="subMenuItemIcon" [inlineSVG]="'../../../assets/menuAssets/archiveIco.svg'"></i>
-      <p class="subMenuItemTitle">ARCHIVES</p>
-    </div>
-  </div>
-  <div class="menuItem" (click)="clickOnMenuItem('produits')" [ngClass]="{'menuItemActive': activeMenuItems.produits}">
-    <i *ngIf="!activeMenuItems.produits" class="menuItemIcon" [inlineSVG]="'../../../assets/menuAssets/produitsIco.svg'"></i>
-    <i *ngIf="activeMenuItems.produits" class="menuItemIcon" [inlineSVG]="'../../../assets/menuAssets/arrowDown.svg'"></i>
-    <p class="menuItemTitle"> PRODUITS </p>
-    <i *ngIf="!activeMenuItems.produits" class="menuItemArrow" [inlineSVG]="'../../../assets/menuAssets/arrowDown.svg'"></i>
-  </div>
-  <div *ngIf="activeMenuItems.produits" class="subMenu">
-    <div class="subMenuItem">
-      <i class="subMenuItemIcon" [inlineSVG]="'../../../assets/menuAssets/vendusIco.svg'"></i>
-      <p class="subMenuItemTitle">VENDUS</p>
-    </div>
-    <div class="subMenuItem last">
-      <i class="subMenuItemIcon" [inlineSVG]="'../../../assets/menuAssets/nonVendusIco.svg'"></i>
-      <p class="subMenuItemTitle">NON VENDUS</p>
-    </div>
-  </div>
-</div> -->
+</div>
