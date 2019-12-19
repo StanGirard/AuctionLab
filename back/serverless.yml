@@ -21,6 +21,8 @@ plugins:
 provider:
   name: aws
   runtime: nodejs10.x
+  memorySize: 256 # optional, in MB, default is 1024
+  timeout: 10
   environment:
     userTable: ${self:custom.userTable}
   stage: dev
