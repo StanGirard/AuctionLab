@@ -5,7 +5,7 @@ export const fakeBuyer = ()=> {
       statusCode: 200,
       body: JSON.stringify({
         email: faker.internet.email,
-        type: "Acheteur",
+        typeUser: "Acheteur",
         username: faker.name.firstName + " " + faker.name.lastName,
       }),
     };
@@ -16,7 +16,7 @@ export const fakeBuyer = ()=> {
       statusCode: 200,
       body: JSON.stringify({
         email: faker.internet.email,
-        type: "Vendeur",
+        typeUser: "Vendeur",
         username: faker.name.firstName + " " + faker.name.lastName,
       }),
     };

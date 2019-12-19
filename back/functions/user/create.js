@@ -8,7 +8,7 @@ export async function main(event, context, callback) {
     TableName: process.env.userTable,
     Item: {
       email: data.email,
-      type: data.type,
+      typeUser: data.type,
       username: data.username,
       createdAt: Date.now()
     }
