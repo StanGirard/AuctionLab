@@ -99,21 +99,7 @@ export const menu = () => {
         icon: "../../../assets/menuAssets/nonVendusIco.svg",
         route: "null",
         last: true
-      }, {
-        parent: false,
-        name: "caca",
-        title: "CACA PROUT DANS LE SLIP",
-        icon: "../../../assets/menuAssets/poop.svg",
-        route: "null",
-        last: true
-      }, {
-        parent: "caca",
-        name: "caca",
-        title: "SLIP",
-        icon: "../../../assets/menuAssets/panties.svg",
-        route: "null",
-        last: true
-      },
+      }
     ]
   }
 }
