@@ -3,3 +3,5 @@ back/package-lock.json
 back/node_modules
 .DS_Store
 .webpack
+back/.webpack/
+back/.serverless
