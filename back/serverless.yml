@@ -82,6 +82,12 @@ functions:
       - http:
           path: hello
           method: get
+  test:
+    handler: functions/db/test.handler
+    events:
+      - http:
+          path: test
+          method: get
   createUser:
     handler: functions/user/create.main
     events:
