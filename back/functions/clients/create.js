@@ -7,7 +7,7 @@ export async function main(event, context) {
     const verifyQuery = "SELECT * from Clients where identifier = :identifier;";
     let resultVerify = await AuroraDB.query(verifyQuery, {identifier: event.pathParameters.id});
     if (resultVerify.records.length > 0){
-      return success({status: true, result: [], error: "Identifier already used"});
+      return failure({status: false, result: [], error: "Identifier already used"});
     } else {
       const query = `INSERT INTO Clients (identifier,nom, prenom, email, pays, ville, code_postal, addresse, acheteur, vendeur, created_at) VALUES(:identifier, :nom, :prenom, :email, :pays, :ville, :code_postal, :addresse, :acheteur, :vendeur, now())`;
       let result = await AuroraDB.query(query,{

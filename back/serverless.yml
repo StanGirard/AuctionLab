@@ -90,7 +90,7 @@ functions:
           method: post
           cors: true
   clientsUpdate:
-    handler: functions/clients/create.main
+    handler: functions/clients/update.main
     events:
       - http:
           path: /clients/{id}
