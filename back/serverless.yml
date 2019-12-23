@@ -88,6 +88,13 @@ functions:
       - http:
           path: test
           method: get
+  dbInit:
+    handler: functions/db/init.handler
+    events:
+      - http:
+          path: db/init
+          method: get
+
   createUser:
     handler: functions/user/create.main
     events:
