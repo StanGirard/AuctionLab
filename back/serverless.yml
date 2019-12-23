@@ -96,6 +96,13 @@ functions:
           path: /clients/{id}
           method: put
           cors: true
+  clientsDelete:
+    handler: functions/clients/delete.main
+    events:
+      - http:
+          path: /clients/{id}
+          method: delete
+          cors: true
 
 
 resources:
