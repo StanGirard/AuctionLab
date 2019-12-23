@@ -3,6 +3,8 @@ app: auctionlab
 custom: 
   stage: ${opt:stage, self:provider.stage}
   userTable: ${self:custom.stage}-makeauctionsngreatagain-usertable
+  dbLogin: magaUser
+  dbPassword: testtest
 
 
 # NOTE: update this with your service name
@@ -25,8 +27,10 @@ provider:
   timeout: 10
   environment:
     userTable: ${self:custom.userTable}
+    dbLogin: $(self:custom.dbLogin)
+    dbPassword: $(self:custom.dbPassword)
   stage: dev
-  region: eu-west-2
+  region: eu-west-1
   iamRoleStatements: 
     - Effect: Allow
       Action:
@@ -45,13 +49,31 @@ provider:
           -
             - { "Fn::GetAtt": [MagaDB, Arn ] }
             - "index/*"
-  # To load environment variables externally
-  # rename env.example to .env and uncomment
-  # the following line. Also, make sure to not
-  # commit your .env.
-  #
-  #environment:
-  #  sampleEnvVar: ${env:SAMPLE_ENV_VAR}
+    - Effect: Allow
+      Action:
+        - secretsmanager:CreateSecret
+        - secretsmanager:ListSecrets
+        - secretsmanager:GetRandomPassword
+        - tag:GetResources
+        - rds-data:BatchExecuteStatement
+        - rds-data:BeginTransaction
+        - rds-data:CommitTransaction
+        - rds-data:ExecuteStatement
+        - rds-data:RollbackTransaction
+      Resource: 
+        - "*"
+    - Effect: Allow
+      Action: 
+        - secretsmanager:GetSecretValue
+        - secretsmanager:PutResourcePolicy
+        - secretsmanager:PutSecretValue
+        - secretsmanager:DeleteSecret
+        - secretsmanager:DescribeSecret
+        - secretsmanager:TagResource
+      Resource:
+        - "arn:aws:secretsmanager:*:*:secret:rds-db-credentials/*"
+
+ 
 
 functions:
   hello:
@@ -84,3 +106,4 @@ resources:
   - ${file(resources/api-gateway-errors.yml)}
   - ${file(resources/dynamodb-table.yml)}
   - ${file(resources/s3-bucket.yml)}
+  - ${file(resources/aurora-db.yml)}

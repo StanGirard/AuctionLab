@@ -1,0 +1,16 @@
+Resources:
+  RDSCluster:
+    Type: AWS::RDS::DBCluster
+    Properties:
+      MasterUsername: ${self:custom.dbLogin} 
+      MasterUserPassword: ${self:custom.dbPassword} 
+      DatabaseName: MagaDB
+      Engine: aurora
+      EngineMode: serverless
+      ScalingConfiguration:
+        AutoPause: true
+        MaxCapacity: 4
+        MinCapacity: 1
+        SecondsUntilAutoPause: 300
+      EnableHttpEndpoint: true
+      StorageEncrypted: true
