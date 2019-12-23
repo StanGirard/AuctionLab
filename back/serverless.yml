@@ -94,12 +94,19 @@ functions:
       - http:
           path: db/init
           method: get
-
   createUser:
     handler: functions/user/create.main
     events:
       - http:
           path: /user/create
+          method: post
+          cors: true
+
+  createUserOld:
+    handler: functions/user/createold.main
+    events:
+      - http:
+          path: /user/createold
           method: post
           cors: true
   getUserType:
