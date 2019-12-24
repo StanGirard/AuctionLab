@@ -11,6 +11,6 @@ Resources:
         AutoPause: true
         MaxCapacity: 2
         MinCapacity: 1
-        SecondsUntilAutoPause: 900
+        SecondsUntilAutoPause: 300
       EnableHttpEndpoint: true
       StorageEncrypted: true
