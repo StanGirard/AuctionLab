@@ -9,8 +9,8 @@ Resources:
       EngineMode: serverless
       ScalingConfiguration:
         AutoPause: true
-        MaxCapacity: 4
+        MaxCapacity: 2
         MinCapacity: 1
-        SecondsUntilAutoPause: 300
+        SecondsUntilAutoPause: 900
       EnableHttpEndpoint: true
       StorageEncrypted: true
