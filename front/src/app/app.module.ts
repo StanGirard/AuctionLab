@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { InlineSVGModule } from 'ng-inline-svg';
@@ -7,12 +8,18 @@ import { AppComponent } from './app.component';
 
 import { MenuComponent } from './components/menu/menu.component';
 import { HeaderComponent } from './components/header/header.component';
+import { AcheteursComponent } from './components/clients/acheteurs/acheteurs.component';
+import { ClientsComponent } from './components/clients/clients.component';
+import { VendeursComponent } from './components/clients/vendeurs/vendeurs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    HeaderComponent
+    HeaderComponent,
+    ClientsComponent,
+    AcheteursComponent,
+    VendeursComponent,
   ],
   imports: [
     BrowserModule,

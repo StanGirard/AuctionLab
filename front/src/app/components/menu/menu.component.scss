@@ -65,6 +65,11 @@
     border-radius: 10px;
   }
 
+  .dashboard:hover {
+    background-color: $base-color-opacity;
+    border-radius: 10px;
+  }
+
   .subMenuItem {
     height: auto;
     padding: 1px;

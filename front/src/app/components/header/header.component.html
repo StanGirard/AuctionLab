@@ -8,8 +8,8 @@
   <div class="settingsAndNotifWrapper">
     <div class="notificationsBellWrapper">
       <i class="notificationsBell" [inlineSVG]="'../../../assets/headerAssets/notifications.svg'"></i>
-      <span class="badge">
-        1
+      <span *ngIf="this.nbNotif" class="badge">
+        {{this.nbNotif}}
       </span>
     </div>
     <i class="settings" [inlineSVG]="'../../../assets/headerAssets/settings.svg'"></i>
