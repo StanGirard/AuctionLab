@@ -83,7 +83,7 @@ functions:
           path: db/init
           method: get
   clientsCreate:
-    handler: functions/clients/create.main
+    handler: functions/clients/new.main
     events:
       - http:
           path: /clients/{id}
@@ -104,9 +104,9 @@ functions:
           method: delete
           cors: true
 
-
 resources:
   - ${file(resources/api-gateway-errors.yml)}
   - ${file(resources/dynamodb-table.yml)}
   - ${file(resources/s3-bucket.yml)}
   - ${file(resources/aurora-db.yml)}
+
