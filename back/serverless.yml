@@ -103,6 +103,13 @@ functions:
           path: /clients
           method: get
           cors: true
+  clientsDelete:
+    handler: functions/clients/delete.main
+    events:
+      - http:
+          path: /clients/{id}
+          method: delete
+          cors: true
   particulierCreate:
     handler: functions/particulier/new.main
     events:
@@ -123,6 +130,13 @@ functions:
       - http:
           path: /particulier
           method: get
+          cors: true
+  particulierDelete:
+    handler: functions/particulier/delete.main
+    events:
+      - http:
+          path: /particulier/{id}
+          method: delete
           cors: true
   entrepriseCreate:
     handler: functions/entreprise/new.main
@@ -145,6 +159,13 @@ functions:
           path: /entreprise
           method: get
           cors: true
+  entrepriseDelete:
+    handler: functions/entreprise/delete.main
+    events:
+      - http:
+          path: /entreprise/{id}
+          method: delete
+          cors: true
   employeCreate:
     handler: functions/employe/new.main
     events:
@@ -165,6 +186,13 @@ functions:
       - http:
           path: /employe
           method: get
+          cors: true
+  employeDelete:
+    handler: functions/employe/delete.main
+    events:
+      - http:
+          path: /employe/{id}
+          method: delete
           cors: true
   documentsCreate:
     handler: functions/documents/new.main
@@ -187,6 +215,13 @@ functions:
           path: /documents
           method: get
           cors: true
+  documentsDelete:
+    handler: functions/documents/delete.main
+    events:
+      - http:
+          path: /documents/{id}
+          method: delete
+          cors: true
   addresseCreate:
     handler: functions/addresse/new.main
     events:
@@ -208,6 +243,13 @@ functions:
           path: /addresse
           method: get
           cors: true
+  addresseDelete:
+    handler: functions/addresse/delete.main
+    events:
+      - http:
+          path: /addresse/{id}
+          method: delete
+          cors: true
   clientsUpdate:
     handler: functions/clients/update.main
     events:
@@ -215,13 +257,7 @@ functions:
           path: /clients/{id}
           method: put
           cors: true
-  clientsDelete:
-    handler: functions/clients/delete.main
-    events:
-      - http:
-          path: /clients/{id}
-          method: delete
-          cors: true
+  
 
 resources:
   - ${file(resources/api-gateway-errors.yml)}
