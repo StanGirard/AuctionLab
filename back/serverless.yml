@@ -96,6 +96,13 @@ functions:
           path: /clients/{id}
           method: get
           cors: true
+  clientsGetList:
+    handler: functions/clients/getList.main
+    events:
+      - http:
+          path: /clients
+          method: get
+          cors: true
   particulierCreate:
     handler: functions/particulier/new.main
     events:
