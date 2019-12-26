@@ -138,6 +138,20 @@ functions:
           path: /addresse/{id}
           method: post
           cors: true
+  addresseGet:
+    handler: functions/addresse/get.main
+    events:
+      - http:
+          path: /addresse/{id}
+          method: get
+          cors: true
+  addresseGetList:
+    handler: functions/addresse/getList.main
+    events:
+      - http:
+          path: /addresse
+          method: get
+          cors: true
   clientsUpdate:
     handler: functions/clients/update.main
     events:
