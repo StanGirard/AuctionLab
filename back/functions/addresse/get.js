@@ -3,7 +3,7 @@ import { AuroraDB } from '../../libs/aurora-lib';
 
 export async function main(event, context) {
     try {
-        const query = `SELECT * from Addresse where identifier = :identifier`;
+        const query = `SELECT * from Addresse where id = :id`;
         let result = await AuroraDB.query(query, {
             identifier: event.pathParameters.id
         });
