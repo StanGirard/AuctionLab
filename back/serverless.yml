@@ -103,6 +103,13 @@ functions:
           path: /entreprise/{id}
           method: post
           cors: true
+  employeCreate:
+    handler: functions/employe/new.main
+    events:
+      - http:
+          path: /employe/{id}
+          method: post
+          cors: true
   clientsUpdate:
     handler: functions/clients/update.main
     events:
