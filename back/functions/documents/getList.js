@@ -18,7 +18,7 @@ export async function main(event, context) {
                         if (filters[filt] == "true" || filters[filt] == "false") {
                             query += filt + " IS " + filters[filt] + " ";
                         } else {
-                            query += filt + " LIKE '%" + filters[filt] + "%' ";
+                            query += filt + " LIKE '" + filters[filt] + "' ";
                         }
                     } else {
                         if (number != 0) { query += " AND "; }

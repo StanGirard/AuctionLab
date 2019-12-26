@@ -110,6 +110,14 @@ functions:
           path: /clients/{id}
           method: delete
           cors: true
+  clientsUpdate:
+    handler: functions/clients/update.main
+    events:
+      - http:
+          path: /clients/{id}
+          method: put
+          cors: true
+  
   particulierCreate:
     handler: functions/particulier/new.main
     events:
@@ -250,14 +258,6 @@ functions:
           path: /addresse/{id}
           method: delete
           cors: true
-  clientsUpdate:
-    handler: functions/clients/update.main
-    events:
-      - http:
-          path: /clients/{id}
-          method: put
-          cors: true
-  
 
 resources:
   - ${file(resources/api-gateway-errors.yml)}
