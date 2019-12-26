@@ -131,6 +131,20 @@ functions:
           path: /documents/{id}
           method: post
           cors: true
+  documentsGet:
+    handler: functions/documents/get.main
+    events:
+      - http:
+          path: /documents/{id}
+          method: get
+          cors: true
+  documentsGetList:
+    handler: functions/documents/getList.main
+    events:
+      - http:
+          path: /documents
+          method: get
+          cors: true
   addresseCreate:
     handler: functions/addresse/new.main
     events:
