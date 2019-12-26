@@ -9,8 +9,7 @@ CREATE TABLE `Clients` (
 );
 
 CREATE TABLE `Particulier` (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
-  `identifier` varchar(25),
+  `identifier` varchar(25) PRIMARY KEY,
   `titre` varchar(25),
   `email` varchar(255),
   `telephone` varchar(20),
@@ -47,14 +46,13 @@ CREATE TABLE `Documents` (
 );
 
 CREATE TABLE `Addresse` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `identifier` varchar(25),
   `titre` varchar(50) NOT NULL,
   `pays` varchar(255),
   `ville` varchar(255),
   `code_postal` varchar(5),
-  `addresse` VARCHAR(255),
-  PRIMARY KEY (`id`, `identifier`)
+  `addresse` VARCHAR(255)
 );
 
 ALTER TABLE `Particulier` ADD FOREIGN KEY (`identifier`) REFERENCES `Clients` (`identifier`);
