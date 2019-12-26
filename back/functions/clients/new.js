@@ -10,7 +10,7 @@ export async function main(event, context) {
       return failure({status: false, result: [], error: "Identifier already used"});
     } else {
       const query = `INSERT INTO Clients (identifier,denomination, entreprise, acheteur, vendeur, vip, created_at) VALUES(:identifier,:denomination, :entreprise,:acheteur, :vendeur,:vip,  now())`;
-      let result = await AuroraDB.query(query,{
+      let result = await AuroraDB.transaction().query(query,{
         identifier: event.pathParameters.id, denomination: data.denomination, entreprise: data.entreprise, acheteur: data.acheteur, vendeur: data.vendeur, vip: data.vip, created_at: "now()"})
         .rollback((e,status) => { failure({status: false, result: status, error: e}); })
         .commit();
