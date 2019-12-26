@@ -5,6 +5,10 @@ custom:
   userTable: ${self:custom.stage}-makeauctionsngreatagain-usertable
   dbLogin: magaUser
   dbPassword: testtest
+  splitStacks:
+    perFunction: false
+    perType: true
+    perGroupFunction: false
 
 
 # NOTE: update this with your service name
@@ -18,6 +22,7 @@ plugins:
   - serverless-bundle # Package our functions with Webpack
   - serverless-offline
   - serverless-dotenv-plugin # Load .env as environment variables
+  - serverless-plugin-split-stacks
 
 
 provider:
@@ -117,7 +122,6 @@ functions:
           path: /clients/{id}
           method: put
           cors: true
-  
   particulierCreate:
     handler: functions/particulier/new.main
     events:
@@ -145,6 +149,13 @@ functions:
       - http:
           path: /particulier/{id}
           method: delete
+          cors: true
+  particulierUpdate:
+    handler: functions/particulier/update.main
+    events:
+      - http:
+          path: /particulier/{id}
+          method: put
           cors: true
   entrepriseCreate:
     handler: functions/entreprise/new.main
@@ -174,6 +185,13 @@ functions:
           path: /entreprise/{id}
           method: delete
           cors: true
+  entrepriseUpdate:
+    handler: functions/entreprise/update.main
+    events:
+      - http:
+          path: /entreprise/{id}
+          method: put
+          cors: true
   employeCreate:
     handler: functions/employe/new.main
     events:
@@ -201,6 +219,13 @@ functions:
       - http:
           path: /employe/{id}
           method: delete
+          cors: true
+  employeUpdate:
+    handler: functions/employe/update.main
+    events:
+      - http:
+          path: /employe/{id}
+          method: put
           cors: true
   documentsCreate:
     handler: functions/documents/new.main
@@ -230,6 +255,13 @@ functions:
           path: /documents/{id}
           method: delete
           cors: true
+  documentsUpdate:
+    handler: functions/documents/update.main
+    events:
+      - http:
+          path: /documents/{id}
+          method: put
+          cors: true
   addresseCreate:
     handler: functions/addresse/new.main
     events:
@@ -257,6 +289,13 @@ functions:
       - http:
           path: /addresse/{id}
           method: delete
+          cors: true
+  addresseUpdate:
+    handler: functions/addresse/update.main
+    events:
+      - http:
+          path: /addresse/{id}
+          method: put
           cors: true
 
 resources:
