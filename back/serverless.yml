@@ -110,12 +110,40 @@ functions:
           path: /particulier/{id}
           method: post
           cors: true
+  particulierGet:
+    handler: functions/particulier/get.main
+    events:
+      - http:
+          path: /particulier/{id}
+          method: get
+          cors: true
+  particulierGetList:
+    handler: functions/particulier/getList.main
+    events:
+      - http:
+          path: /particulier
+          method: get
+          cors: true
   entrepriseCreate:
     handler: functions/entreprise/new.main
     events:
       - http:
           path: /entreprise/{id}
           method: post
+          cors: true
+  entrepriseGet:
+    handler: functions/entreprise/get.main
+    events:
+      - http:
+          path: /entreprise/{id}
+          method: get
+          cors: true
+  entrepriseGetList:
+    handler: functions/entreprise/getList.main
+    events:
+      - http:
+          path: /entreprise
+          method: get
           cors: true
   employeCreate:
     handler: functions/employe/new.main
