@@ -124,6 +124,20 @@ functions:
           path: /employe/{id}
           method: post
           cors: true
+  employeGet:
+    handler: functions/employe/get.main
+    events:
+      - http:
+          path: /employe/{id}
+          method: get
+          cors: true
+  employeGetList:
+    handler: functions/employe/getList.main
+    events:
+      - http:
+          path: /employe
+          method: get
+          cors: true
   documentsCreate:
     handler: functions/documents/new.main
     events:
