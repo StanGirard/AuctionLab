@@ -4,9 +4,7 @@ import { AuroraDB } from '../../libs/aurora-lib';
 export async function main(event, context) {
     try {
         const params = event.queryStringParameters;
-        console.log("HAHAHAHAHAH");
         var query = `SELECT * from Clients`;
-        console.log(params);
         if (params) {
             if (params.filter != null) {
                 // Filter example: filter={"vip":"Normal", "denomination":"Stanislas Girard", "vendeur": "false"}
@@ -19,7 +17,7 @@ export async function main(event, context) {
                     if (filters[filt] == "true" || filters[filt] == "false"){
                         query += filt + " IS " + filters[filt] + " ";
                     } else {
-                        query += filt + "= '" + filters[filt] + "' ";
+                        query += filt + " LIKE '%" + filters[filt] + "%' ";
                     }
                 }
             }
@@ -34,11 +32,9 @@ export async function main(event, context) {
                 query += " LIMIT " + range[0] + " , " + range[1];
             }
         }
-        console.log(query);
         let result = await AuroraDB.query(query);
         return success({ status: true, result: result });
     } catch (e) {
-        console.log(e);
         return failure({ status: false, error: e });
     }
 }
