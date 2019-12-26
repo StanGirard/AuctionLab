@@ -89,6 +89,20 @@ functions:
           path: /clients/{id}
           method: post
           cors: true
+  particulierCreate:
+    handler: functions/particulier/new.main
+    events:
+      - http:
+          path: /particulier/{id}
+          method: post
+          cors: true
+  entrepriseCreate:
+    handler: functions/entreprise/new.main
+    events:
+      - http:
+          path: /entreprise/{id}
+          method: post
+          cors: true
   clientsUpdate:
     handler: functions/clients/update.main
     events:
