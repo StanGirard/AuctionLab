@@ -4,10 +4,9 @@ import { AuroraDB } from '../../libs/aurora-lib';
 export async function main(event, context) {
     try {
         const data = JSON.parse(event.body);
-        const query = `UPDATE Clients SET  denomination = :denomination , entreprise = :entreprise, acheteur = :acheteur, vendeur = :vendeur, vip = :vip where identifier = :identifier;`;
+        const query = `UPDATE Documents SET identifier = :identifier, type = :type, url = :url where id = :id;`;
         let result = await AuroraDB.query(query, {
-            identifier: event.pathParameters.id, denomination: data.denomination, entreprise: data.entreprise,
-            acheteur: data.acheteur, vendeur: data.vendeur, vip: data.vip
+            id: event.pathParameters.id, identifier: data.identifier, type: data.type, url: data.url
         });
         return success({ status: true, result: result });
     } catch (e) {
