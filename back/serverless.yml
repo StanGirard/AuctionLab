@@ -110,6 +110,20 @@ functions:
           path: /employe/{id}
           method: post
           cors: true
+  documentsCreate:
+    handler: functions/documents/new.main
+    events:
+      - http:
+          path: /documents/{id}
+          method: post
+          cors: true
+  addresseCreate:
+    handler: functions/addresse/new.main
+    events:
+      - http:
+          path: /addresse/{id}
+          method: post
+          cors: true
   clientsUpdate:
     handler: functions/clients/update.main
     events:
