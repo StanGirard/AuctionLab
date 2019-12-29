@@ -45,7 +45,7 @@ CREATE TABLE `Documents` (
   `url` varchar(255) NOT NULL,
   `date_added` varchar(255) NOT NULL,
   `status`varchar(25) NOT NULL,
-  `valid_until` varchar(25)
+  `valid_until` timestamp
 );
 
 CREATE TABLE `Addresse` (
