@@ -12,7 +12,7 @@ export const menu = () => {
         name: "clients",
         title: 'CLIENTS',
         icon: "../../../assets/menuAssets/clientsIco.svg",
-        route: '/clients',
+        route: '/',
         active: false,
       }, {
         parent: "clients",

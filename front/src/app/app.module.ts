@@ -9,15 +9,15 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AcheteursComponent } from './components/clients/acheteurs/acheteurs.component';
-import { ClientsComponent } from './components/clients/clients.component';
 import { VendeursComponent } from './components/clients/vendeurs/vendeurs.component';
+
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     HeaderComponent,
-    ClientsComponent,
     AcheteursComponent,
     VendeursComponent,
   ],
@@ -25,7 +25,8 @@ import { VendeursComponent } from './components/clients/vendeurs/vendeurs.compon
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    InlineSVGModule.forRoot()
+    InlineSVGModule.forRoot(),
+    SharedModule
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy}
