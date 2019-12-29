@@ -9,9 +9,9 @@ export async function main(event, context) {
     if (resultVerify.records.length > 0){
       return failure({status: false, result: [], error: "Type already used"});
     } else {
-      const query = `INSERT INTO Documents (identifier,type, url, date_added) VALUES(:identifier,:type, :url,now())`;
+      const query = `INSERT INTO Documents (identifier,type, url, date_added,status, valid_until) VALUES(:identifier,:type, :url,now(), :status, :valid_until)`;
       let result = await AuroraDB.transaction().query(query,{
-        identifier: event.pathParameters.id, type: data.type, url: data.url})
+        identifier: event.pathParameters.id, type: data.type, url: data.url, status: data.status, valid_until: data.valid_until})
         .rollback((e,status) => { failure({status: false, result: status, error: e}); })
         .commit();
         return success({status:true, result:result});

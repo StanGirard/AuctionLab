@@ -43,7 +43,9 @@ CREATE TABLE `Documents` (
   `identifier` varchar(25),
   `type` varchar(255) NOT NULL,
   `url` varchar(255) NOT NULL,
-  `date_added` varchar(255) NOT NULL
+  `date_added` varchar(255) NOT NULL,
+  `status`varchar(25) NOT NULL,
+  `valid_until` varchar(25)
 );
 
 CREATE TABLE `Addresse` (
