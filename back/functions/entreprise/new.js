@@ -9,9 +9,9 @@ export async function main(event, context) {
     if (resultVerify.records.length > 0){
       return failure({status: false, result: [], error: "Identifier already used"});
     } else {
-      const query = `INSERT INTO Entreprise (identifier,numero_rcs, numero_tva, telephone, email) VALUES (:identifier,:numero_rcs, :numero_tva,:telephone, :email)`;
+      const query = `INSERT INTO Entreprise (identifier,denomination,numero_rcs, numero_tva, telephone, email) VALUES (:identifier,:denomination,:numero_rcs, :numero_tva,:telephone, :email)`;
       let result = await AuroraDB.transaction().query(query,{
-        identifier: event.pathParameters.id, numero_rcs: data.numero_rcs, numero_tva: data.numero_tva, telephone: data.telephone, email: data.email})
+        identifier: event.pathParameters.id,denomination: data.denomination, numero_rcs: data.numero_rcs, numero_tva: data.numero_tva, telephone: data.telephone, email: data.email})
         .rollback((e,status) => { failure({status: false, result: status, error: e}); })
         .commit();
         return success({status:true, result:result});

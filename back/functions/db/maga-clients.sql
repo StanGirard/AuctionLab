@@ -21,6 +21,7 @@ CREATE TABLE `Particulier` (
 
 CREATE TABLE `Entreprise` (
   `identifier` varchar(25) PRIMARY KEY,
+  `denomination` varchar(25),
   `numero_rcs` varchar(50) NOT NULL,
   `numero_tva` varchar(50) NOT NULL,
   `telephone` varchar(20),
