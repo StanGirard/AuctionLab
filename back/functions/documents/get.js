@@ -5,9 +5,9 @@ export async function main(event, context) {
     try {
         const query = `SELECT * from Documents where id = :id`;
         let result = await AuroraDB.query(query, {
-            identifier: event.pathParameters.id
+            id: event.pathParameters.id
         });
-        return success({ status: true, result: result });
+        return success({ status: true, result: result});
     } catch (e) {
         console.log(e);
         return failure({ status: false, error: e });

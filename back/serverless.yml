@@ -39,26 +39,10 @@ provider:
   iamRoleStatements: 
     - Effect: Allow
       Action:
-        - dynamodb:DescribeTable 
-        - dynamodb:Query
-        - dynamodb:Scan
-        - dynamodb:GetItem
-        - dynamodb:PutItem
-        - dynamodb:UpdateItem
-        - dynamodb:DeleteItem
-        # Restrict our IAM role permissions to # the specific table for the stage 
-      Resource:
-        - "Fn::GetAtt": [ MagaDB, Arn ]
-        - "Fn::Join":
-          - "/"
-          -
-            - { "Fn::GetAtt": [MagaDB, Arn ] }
-            - "index/*"
-    - Effect: Allow
-      Action:
         - secretsmanager:CreateSecret
         - secretsmanager:ListSecrets
         - secretsmanager:GetRandomPassword
+        - secretsmanager:GetSecretValue
         - tag:GetResources
         - rds-data:BatchExecuteStatement
         - rds-data:BeginTransaction
@@ -76,7 +60,8 @@ provider:
         - secretsmanager:DescribeSecret
         - secretsmanager:TagResource
       Resource:
-        - "arn:aws:secretsmanager:*:*:secret:rds-db-credentials/*"
+        // ARN Of the secrets of the user db
+        - "arn:aws:secretsmanager:eu-west-1:831482984725:secret:MagaDBAdminSecret-qyHLgH"
 
  
 
@@ -300,7 +285,6 @@ functions:
 
 resources:
   - ${file(resources/api-gateway-errors.yml)}
-  - ${file(resources/dynamodb-table.yml)}
+#  - ${file(resources/dynamodb-table.yml)}
   - ${file(resources/s3-bucket.yml)}
-  - ${file(resources/aurora-db.yml)}
-
+#  - ${file(resources/aurora-db.yml)}
