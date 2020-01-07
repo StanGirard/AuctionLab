@@ -1,1 +1,6 @@
 <app-tools-bar class="toolsBar"></app-tools-bar>
+<h1>Acheteurs</h1>
+  <h2>Acheteurs</h2>
+  <ul>
+    <li *ngFor="let acheteur of acheteurs">{{acheteur.identifier}} {{acheteur.denomination}} {{acheteur.entreprise}} {{acheteur.vip}}</li>
+  </ul>
