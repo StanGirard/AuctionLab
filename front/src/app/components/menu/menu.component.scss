@@ -1,0 +1,112 @@
+@import 'src/styles.scss';
+
+.menuWrapper {
+  width: 270px;
+  height: 100vh;
+  background-color: $base-color;
+  box-shadow: 8px black;
+  display: flex;
+  flex-direction: column;
+  border: 10px solid $base-color;
+
+  .menuItem {
+    width: 100%;
+    height: auto;
+    color: $icon-color;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    .menuItemIcon {
+      width: 20px;
+      height: 20px;
+      margin-left: 20px;
+      fill: $icon-color;
+    }
+
+    .menuItemTitle {
+      margin-left: 20px;
+      width: 100px;
+      font-size: 16px;
+    }
+
+    .menuItemArrow {
+      width: 10px;
+      height: 10px;
+      margin-left: 60px;
+      transform: rotate(270deg);
+      fill: $base-white;
+    }
+  }
+
+  .menuItem:hover {
+    background-color: $base-color-opacity;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
+  .menuItemActive {
+    background-color: $base-color-opacity;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+
+  .menuItemActive:hover {
+    background-color: $base-color-opacity;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .dashboard {
+    background-color: $base-color-opacity;
+    border-radius: 10px;
+  }
+
+  .dashboard:hover {
+    background-color: $base-color-opacity;
+    border-radius: 10px;
+  }
+
+  .subMenuItem {
+    height: auto;
+    padding: 1px;
+    background-color: $icon-color;
+    color: $base-color;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .last {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .subMenuItemTitle {
+    height: 100%;
+    width: 100%;
+    margin-left: 20px;
+    font-size: 13px;
+  }
+
+  .subMenuItemIcon {
+    width: 20px;
+    height: 20px;
+    margin-left: 50px;
+    fill: $base-color;
+  }
+
+  .subMenuItemTitle:hover {
+    font-weight: 900;
+  }
+
+  .subMenuItem:hover {
+    background-color: rgba($icon-color, $alpha: 0.8);
+    font-weight: 900;
+    cursor: pointer;
+  }
+}

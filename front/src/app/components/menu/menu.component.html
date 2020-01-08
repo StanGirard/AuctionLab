@@ -1,3 +1,14 @@
-<p>
-  menu works!
-</p>
+<div class="menuWrapper">
+  <div *ngFor="let menuItem of menuDatas.menus" [routerLink]=[menuItem.route]>
+  <div *ngIf="!menuItem.parent " class="menuItem" (click)=clickOnMenuItem(menuItem.name) [ngClass]="{'menuItemActive': menuItem.active, 'dashboard': menuItem.name == 'dashboard' && menuItem.active}">
+      <i *ngIf="!menuItem.active || menuItem.name == 'dashboard'" class="menuItemIcon" [inlineSVG]="menuItem.icon"></i>
+      <i *ngIf="menuItem.active && menuItem.name != 'dashboard'" class="menuItemIcon" [inlineSVG]="'../../../assets/menuAssets/arrowDown.svg'"></i>
+      <p class="menuItemTitle"> {{menuItem.title}} </p>
+      <i *ngIf="!menuItem.active && menuItem.name != 'dashboard'" class="menuItemArrow" [inlineSVG]="'../../../assets/menuAssets/arrowDown.svg'"></i>
+  </div>
+  <div *ngIf="menuItem.parent && menuItem.active" class="subMenuItem" [ngClass]="{'last': menuItem.last}">
+      <i class="subMenuItemIcon" [inlineSVG]="menuItem.icon"></i>
+      <p class="subMenuItemTitle"> {{menuItem.title}} </p>
+  </div>
+  </div>
+</div>

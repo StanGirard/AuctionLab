@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+$base-color:#001f3f;
+$base-color-opacity: rgba(#12406d, 1);
+$base-white: white;
+$icon-color: #EEEEEE;
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: $icon-color;
+}

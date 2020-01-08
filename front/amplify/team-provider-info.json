@@ -1,0 +1,15 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-maga-devlup-dev-152149-authRole",
+            "UnauthRoleArn": "arn:aws:iam::831482984725:role/amplify-maga-devlup-dev-152149-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::831482984725:role/amplify-maga-devlup-dev-152149-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "amplify-maga-devlup-dev-152149-deployment",
+            "UnauthRoleName": "amplify-maga-devlup-dev-152149-unauthRole",
+            "StackName": "amplify-maga-devlup-dev-152149",
+            "StackId": "arn:aws:cloudformation:eu-west-1:831482984725:stack/amplify-maga-devlup-dev-152149/10d72c30-2334-11ea-bad9-0aac2484be2a",
+            "AmplifyAppId": "ddqudmy4ji44i"
+        }
+    }
+}

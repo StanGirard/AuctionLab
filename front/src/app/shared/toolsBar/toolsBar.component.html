@@ -1,0 +1,8 @@
+<div class="toolsBarWrapper">
+  <i [inlineSVG]="'../../../assets/toolsBarAssets/ajouter.svg'" class="addIcon" click="addSelection()"></i>
+  <div class="searchBarContainer" [ngClass]="{'active': searching}" (click)="searchSelection(true)"
+    (clickOutside)="searchSelection(false)">
+    <input class="searchBar" type="text" placeholder="Rechercher..." [(ngModel)]="searchingBarContent" id="searchBar">
+    <i [inlineSVG]="'../../../assets/toolsBarAssets/rechercher.svg'" class="searchIcon"></i>
+  </div>
+</div>

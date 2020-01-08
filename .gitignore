@@ -5,3 +5,4 @@ back/node_modules
 .webpack
 back/.webpack/
 back/.serverless
+node_modules

@@ -1,0 +1,67 @@
+@import 'src/styles.scss';
+
+.headerWrapper {
+  height: 70px;
+  width: 100%;
+  box-shadow: 1px 1px black;
+  background-color: $base-white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .logoWrapper {
+    width: 270px;
+    display: flex;
+    justify-content: center;
+
+    .logo {
+      width: 80px;
+    }
+  }
+
+  .loginWrapper {
+    width: 200px;
+
+    .loginBadge {
+      background-color: $base-color;
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  .settingsAndNotifWrapper {
+    display: flex;
+    margin-right: 20px;
+    .notificationsBellWrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      .notificationsBell {
+        fill: $base-color;
+      }
+
+      .badge {
+        position: absolute;
+        font-size: 12px;
+        background-color: red;
+        color: $base-white;
+        right: 1%;
+        top: -5px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+    }
+
+    .settings {
+      margin-left: 40px;
+      fill: $base-color
+    }
+  }
+}
