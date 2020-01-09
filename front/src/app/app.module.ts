@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material';
 import { MatPaginatorModule } from '@angular/material';
 import { MatSortModule } from '@angular/material';
+import { MatInputModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -35,7 +36,8 @@ import { SharedModule } from './shared/shared.module';
     BrowserAnimationsModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatInputModule
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy}
