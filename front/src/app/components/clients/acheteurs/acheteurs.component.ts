@@ -1,4 +1,4 @@
-import { MatPaginator, MatTableDataSource } from '@angular/material';
+import { MatPaginator, MatTableDataSource, MatSort } from '@angular/material';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from '../../../api.service';
 
@@ -24,6 +24,7 @@ export class AcheteursComponent implements OnInit {
   displayedColumns: string[] = ['identifier', 'denomination', 'entreprise', 'vip'];
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   constructor(private apiService: ApiService) {}
 
@@ -47,6 +48,7 @@ export class AcheteursComponent implements OnInit {
         });
         this.dataSource = new MatTableDataSource(this.acheteursTable);
         this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
       }
     );
   }
