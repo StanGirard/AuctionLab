@@ -1,1 +1,23 @@
+@import 'src/styles.scss';
 
+.mat-elevation-z4 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 310px);
+  margin-left: 10px;
+  margin-top: 10px;
+
+
+  table {
+    width: 100%;
+    position: relative;
+    box-shadow: 0;
+  }
+
+  mat-paginator {
+    width: 100%;
+    position: relative;
+    box-shadow: 0;
+  }
+}
