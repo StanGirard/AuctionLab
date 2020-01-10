@@ -9,6 +9,7 @@ import { MatTableModule } from '@angular/material';
 import { MatPaginatorModule } from '@angular/material';
 import { MatSortModule } from '@angular/material';
 import { MatInputModule} from '@angular/material';
+import { MatIconModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -37,7 +38,8 @@ import { SharedModule } from './shared/shared.module';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy}
