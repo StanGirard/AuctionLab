@@ -13,4 +13,8 @@ export class ApiService {
   public getClients() {
     return this.httpClient.get(`${this.apiURL}/clients`);
   }
+
+  public getAcheteurs() {
+    return this.httpClient.get(`${this.apiURL}/clientsgit ?filter={"acheteur"}`);
+  }
 }
