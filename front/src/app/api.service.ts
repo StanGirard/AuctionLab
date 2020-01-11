@@ -6,7 +6,7 @@ import { Clients } from './clients';
   providedIn: 'root'
 })
 export class ApiService {
-  apiURL = 'https://ciovwatbbg.execute-api.eu-west-1.amazonaws.com/dev';
+  apiURL = 'https://pac9uwxq77.execute-api.eu-west-1.amazonaws.com/dev';
   constructor(private httpClient: HttpClient) {}
 
   public createClients(clients: Clients) {}
@@ -15,6 +15,6 @@ export class ApiService {
   }
 
   public getAcheteurs() {
-    return this.httpClient.get(`${this.apiURL}/clientsgit ?filter={"acheteur"}`);
+    return this.httpClient.get(`${this.apiURL}/clients?filter={"vip":"Normal", "denomination":"Stanislas Girard", "vendeur": "false"}`);
   }
 }
