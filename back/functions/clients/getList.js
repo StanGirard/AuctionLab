@@ -1,9 +1,10 @@
 import { success, failure } from "../../libs/response-lib";
 import { AuroraDB } from '../../libs/aurora-lib';
 
-export async function main(event, context) {
+export async function main(event, context, callback) {
     try {
         const params = event.queryStringParameters;
+        console.log(params);
         var query = `SELECT * from Clients`;
         if (params) {
             if (params.filter != null) {
@@ -53,8 +54,8 @@ export async function main(event, context) {
             }
         }
         let result = await AuroraDB.query(query);
-        return success({ status: true, result: result });
+        return success({ status: true, result: result, lol: "Prout" });
     } catch (e) {
-        return failure({ status: false, error: e });
+        return failure({ status: false, result: "", error: e });
     }
 }
