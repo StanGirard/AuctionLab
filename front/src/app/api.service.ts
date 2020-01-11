@@ -15,6 +15,6 @@ export class ApiService {
   }
 
   public getAcheteurs() {
-    return this.httpClient.get(`${this.apiURL}/clients?filter={"vip":"Normal", "denomination":"Stanislas Girard", "vendeur": "false"}`);
+    return this.httpClient.get(`${this.apiURL}/clients?filter=["acheteur":"0"]`);
   }
 }

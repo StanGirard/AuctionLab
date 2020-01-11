@@ -4,43 +4,13 @@ import { AuroraDB } from '../../libs/aurora-lib';
 export async function main(event, context, callback) {
     try {
         const params = event.queryStringParameters;
-        console.log(params);
         var query = `SELECT * from Clients`;
         if (params) {
             if (params.filter != null) {
-                // Filter example: filter={"vip":"Normal", "denomination":"Stanislas Girard", "vendeur": "false"}
-                query += " WHERE ";
-                const filters = JSON.parse(params.filter);
-                var number = 0;
-                for (const filt in filters) {
-                    if (!Array.isArray(filters[filt])) {
-                        if (number != 0) { query += " AND "; }
-                        number++;
-                        if (filters[filt] == "true" || filters[filt] == "false") {
-                            query += filt + " IS " + filters[filt] + " ";
-                        } else {
-                            query += filt + " LIKE '" + filters[filt] + "' ";
-                        }
-                    } else {
-                        if (number != 0) { query += " AND "; }
-                        number++;
-                        query += filt + " IN " + "(";
-                        const arr = filters[filt];
-                        var number2 = 0;
-                        for (var val in arr){
-                            var el = val;
-                            if (number2 != 0) {
-                                query += ",";
-                            }
-                            if (typeof arr[val] === 'string') {
-                                 el = "'" + arr[val] + "'";
-                            }
-                            query += el;
-                            number2++;
-                        }
-                        query += ") ";
-                    }
-                }
+                // Filter example: filter={vip:Normal, denomination":"Stanislas Girard", "vendeur": "false"}
+                const filters = params.filter;
+                console.log(filters);
+                query += " WHERE " + filters + " IS true";
             }
             if (params.sort != null) {
                 // sort example: sort=["identifier","DESC"]
@@ -53,9 +23,10 @@ export async function main(event, context, callback) {
                 query += " LIMIT " + range[0] + " , " + range[1];
             }
         }
+        console.log(query);
         let result = await AuroraDB.query(query);
         return success({ status: true, result: result, lol: "Prout" });
     } catch (e) {
-        return failure({ status: false, result: "", error: e });
+        return failure({ status: false, result: "", error: e, msg: event.queryStringParameters.filter });
     }
 }
