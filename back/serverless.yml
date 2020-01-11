@@ -73,6 +73,7 @@ functions:
           path: db/init
           method: get
           cors: true
+          
   clientsCreate:
     handler: functions/clients/new.main
     events:
@@ -94,6 +95,12 @@ functions:
           path: /clients
           method: get
           cors: true
+          request:
+            parameters:
+              paths:
+                filter: false
+                sort: false
+                range: false
   clientsDelete:
     handler: functions/clients/delete.main
     events:
