@@ -15,6 +15,9 @@ export class ApiService {
   }
 
   public getAcheteurs() {
-    return this.httpClient.get(`${this.apiURL}/clients?filter=["acheteur":"0"]`);
+    return this.httpClient.get(`${this.apiURL}/clients?filter=acheteur`);
+  }
+  public getVendeurs() {
+    return this.httpClient.get(`${this.apiURL}/clients?filter=vendeur`);
   }
 }

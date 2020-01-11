@@ -29,7 +29,7 @@ export class VendeursComponent implements OnInit {
   constructor(private apiService: ApiService) {}
 
   ngOnInit() {
-    this.apiService.getClients().subscribe(
+    this.apiService.getVendeurs().subscribe(
       data => {
         this.vendeurs = data;
         this.vendeurs = this.vendeurs.result.records;
