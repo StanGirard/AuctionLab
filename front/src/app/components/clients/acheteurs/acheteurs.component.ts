@@ -1,20 +1,59 @@
-import { Component, OnInit } from '@angular/core';
-import {ApiService} from '../../../api.service'
+import { MatPaginator, MatTableDataSource, MatSort } from '@angular/material';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ApiService } from '../../../api.service';
+
+export interface Acheteurs {
+  identifier: number;
+  denomination: string;
+  entreprise: string;
+  vip: string;
+}
+
 @Component({
   selector: 'app-acheteurs',
   templateUrl: './acheteurs.component.html',
   styleUrls: ['./acheteurs.component.scss']
 })
+
 export class AcheteursComponent implements OnInit {
+
   public acheteurs: any;
-  constructor(private _ApiService: ApiService) { }
+  public acheteursTable: Acheteurs[] = [];
+  dataSource: MatTableDataSource<Acheteurs>;
+
+  displayedColumns: string[] = ['identifier', 'denomination', 'entreprise', 'vip'];
+
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
+
+  constructor(private apiService: ApiService) {}
 
   ngOnInit() {
-    this._ApiService.getClients().subscribe(
-      data => { this.acheteurs = data;this.acheteurs = this.acheteurs.result.records; console.log(this.acheteurs)},
+    this.apiService.getAcheteurs().subscribe(
+      data => {
+        this.acheteurs = data;
+        this.acheteurs = this.acheteurs.result.records;
+        console.log(this.acheteurs);
+      },
       err => console.error(err),
-      () => console.log('done loading clients')
-    )
+      () => {
+        this.acheteurs.forEach(element => {
+          const elementToPush: Acheteurs = {
+            identifier : element.identifier,
+            denomination : element.denomination,
+            entreprise : element.entreprise,
+            vip : element.vip
+          };
+          this.acheteursTable.push(elementToPush);
+        });
+        this.dataSource = new MatTableDataSource(this.acheteursTable);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+      }
+    );
   }
 
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 }

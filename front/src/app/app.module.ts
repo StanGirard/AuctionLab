@@ -4,6 +4,12 @@ import { InlineSVGModule } from 'ng-inline-svg';
 import { HttpClientModule } from '@angular/common/http';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material';
+import { MatPaginatorModule } from '@angular/material';
+import { MatSortModule } from '@angular/material';
+import { MatInputModule} from '@angular/material';
+import { MatIconModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -12,6 +18,7 @@ import { AcheteursComponent } from './components/clients/acheteurs/acheteurs.com
 import { VendeursComponent } from './components/clients/vendeurs/vendeurs.component';
 
 import { SharedModule } from './shared/shared.module';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +33,13 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     HttpClientModule,
     InlineSVGModule.forRoot(),
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatInputModule,
+    MatIconModule
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy}

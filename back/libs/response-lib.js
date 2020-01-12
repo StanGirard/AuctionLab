@@ -9,7 +9,8 @@ export function failure(body)
 function buildResponse(statusCode, body) { return {
     statusCode: statusCode,
     headers: {
-"Access-Control-Allow-Origin": "*",
-"Access-Control-Allow-Credentials": true },
+        'Access-Control-Allow-Origin': '*', // Required for CORS support to work
+        'Access-Control-Allow-Credentials': true // Required for cookies, authorization headers with HTTPS
+    },
 body: JSON.stringify(body) };
 }
