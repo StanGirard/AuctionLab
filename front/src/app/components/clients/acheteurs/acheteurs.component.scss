@@ -18,10 +18,21 @@
   border-bottom: 1px solid $base-color;
   z-index: 1;
 
+  .addClient {
+    margin-left: 10%;
+    width: 5%;
+    transition-duration: 0.5s;
+    fill: $base-color;
+  }
+  .addClient:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    fill:$base-color-opacity;
+  }
+
   mat-form-field {
     width: 30%;
-    margin-left: 65%;
-    background-color: $base-white;
+    margin-left: 45%;
   }
 }
 
