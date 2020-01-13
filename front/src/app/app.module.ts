@@ -16,6 +16,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AcheteursComponent } from './components/clients/acheteurs/acheteurs.component';
 import { VendeursComponent } from './components/clients/vendeurs/vendeurs.component';
+import { AddClientComponent } from './components/clients/addClient/addClient.component';
 
 import { SharedModule } from './shared/shared.module';
 
@@ -27,6 +28,7 @@ import { SharedModule } from './shared/shared.module';
     HeaderComponent,
     AcheteursComponent,
     VendeursComponent,
+    AddClientComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,7 @@ import { SharedModule } from './shared/shared.module';
     MatIconModule
   ],
   providers: [
-    {provide: LocationStrategy, useClass: HashLocationStrategy}
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]
 })

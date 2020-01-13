@@ -1,0 +1,21 @@
+@import "src/styles.scss";
+
+.formWrapper {
+  position: fixed;
+  width: calc(100% - 410px);
+  height: calc(94vh - 70px);
+  margin-top: 3vh;
+  margin-left: 55px;
+  background-color: $base-white;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+  display: flex;
+
+  .closeForm {
+    margin-left: calc(100% - 40px);
+    margin-top: 10px;
+  }
+
+  .closeForm:hover {
+    cursor: pointer;
+  }
+}

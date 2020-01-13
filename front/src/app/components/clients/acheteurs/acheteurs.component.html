@@ -1,5 +1,7 @@
-  <div class="toolsBar">
-    <i [inlineSVG]="'../../../../assets/toolsBarAssets/ajouter.svg'" class="addClient"></i>
+  <app-add-client *ngIf="addClient" (closed)="openOrCloseForm()"></app-add-client>
+
+  <div *ngIf="!addClient" class="toolsBar">
+    <i [inlineSVG]="'../../../../assets/toolsBarAssets/ajouter.svg'" class="addClient" (click)="openOrCloseForm()"></i>
     <mat-form-field>
       <mat-label>Rechercher</mat-label>
       <input matInput (keyup)="applyFilter($event.target.value)">
@@ -7,7 +9,7 @@
     </mat-form-field>
   </div>
 
-  <div class="example-container mat-elevation-z0">
+  <div *ngIf="!addClient" class="example-container mat-elevation-z0">
     <table mat-table [dataSource]="dataSource" matSort>
 
       <ng-container matColumnDef="identifier">

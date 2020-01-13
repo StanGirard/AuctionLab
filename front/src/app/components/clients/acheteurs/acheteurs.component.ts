@@ -1,5 +1,5 @@
 import { MatPaginator, MatTableDataSource, MatSort } from '@angular/material';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { ApiService } from '../../../api.service';
 
 export interface Acheteurs {
@@ -20,6 +20,9 @@ export class AcheteursComponent implements OnInit {
   public acheteurs: any;
   public acheteursTable: Acheteurs[] = [];
   dataSource: MatTableDataSource<Acheteurs>;
+
+  public addClient = false;
+  @Output() voted = new EventEmitter<boolean>();
 
   displayedColumns: string[] = ['identifier', 'denomination', 'entreprise', 'vip'];
 
@@ -46,5 +49,9 @@ export class AcheteursComponent implements OnInit {
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  openOrCloseForm() {
+    this.addClient = !this.addClient;
   }
 }
