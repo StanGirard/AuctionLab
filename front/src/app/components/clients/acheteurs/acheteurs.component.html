@@ -1,7 +1,7 @@
   <div class="toolsBar">
     <mat-form-field>
       <mat-label>Rechercher</mat-label>
-      <input matInput>
+      <input matInput (keyup)="applyFilter($event.target.value)">
       <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
   </div>

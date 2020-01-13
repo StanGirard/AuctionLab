@@ -32,20 +32,11 @@ export class AcheteursComponent implements OnInit {
     this.apiService.getAcheteurs().subscribe(
       data => {
         this.acheteurs = data;
-        this.acheteurs = this.acheteurs.result.records;
+        this.acheteursTable = this.acheteurs.result.records;
         console.log(this.acheteurs);
       },
       err => console.error(err),
       () => {
-        this.acheteurs.forEach(element => {
-          const elementToPush: Acheteurs = {
-            identifier : element.identifier,
-            denomination : element.denomination,
-            entreprise : element.entreprise,
-            vip : element.vip
-          };
-          this.acheteursTable.push(elementToPush);
-        });
         this.dataSource = new MatTableDataSource(this.acheteursTable);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;

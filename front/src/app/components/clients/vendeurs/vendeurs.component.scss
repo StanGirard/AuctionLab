@@ -1,18 +1,38 @@
 @import 'src/styles.scss';
 
-.mat-elevation-z4 {
+.example-container {
+  max-height: 70vh;
+  overflow: auto;
+}
+
+.toolsBar {
+  width: calc(100% - 310px);
+  position: absolute;
+  background-color: $base-white;
+  height: 70px;
+  margin-top: 10px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  box-shadow: 5px;
+  border-bottom: 1px solid $base-color;
+  z-index: 1;
+
+  mat-form-field {
+    width: 30%;
+    margin-left: 65%;
+    background-color: $base-white;
+  }
+}
+
+.mat-elevation-z0 {
   position: absolute;
   display: flex;
   flex-direction: column;
   width: calc(100% - 310px);
   margin-left: 10px;
-  margin-top: 10px;
-
-  mat-form-field {
-    width: 50%;
-    margin-left: 10%;
-    margin-top: 20px;
-  }
+  margin-top: 81px;
+  background-color: $base-white;
 
   table {
     width: 100%;
@@ -24,5 +44,11 @@
     width: 100%;
     position: relative;
     box-shadow: 0;
+  }
+
+  .mat-paginator-sticky {
+    bottom: 0px;
+    position: sticky;
+    z-index: 10;
   }
 }
