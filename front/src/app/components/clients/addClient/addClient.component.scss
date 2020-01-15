@@ -2,13 +2,16 @@
 
 .formWrapper {
   position: fixed;
-  width: calc(100% - 410px);
-  height: calc(94vh - 70px);
-  margin-top: 3vh;
-  margin-left: 55px;
+  width: calc(100% - 810px);
+  height: calc(100vh - 90px);
+  margin-top: 10px;
+  margin-left: 210px;
   background-color: $base-white;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+  z-index: 2000;
   display: flex;
+  animation-duration: 1s;
+  animation-name: slidein;
 
   .closeForm {
     margin-left: calc(100% - 40px);
@@ -17,5 +20,15 @@
 
   .closeForm:hover {
     cursor: pointer;
+  }
+}
+
+@keyframes slidein {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: calc(100vh - 90px);
   }
 }

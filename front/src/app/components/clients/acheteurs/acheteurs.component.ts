@@ -22,7 +22,6 @@ export class AcheteursComponent implements OnInit {
   dataSource: MatTableDataSource<Acheteurs>;
 
   public addClient = false;
-  @Output() voted = new EventEmitter<boolean>();
 
   displayedColumns: string[] = ['identifier', 'denomination', 'entreprise', 'vip'];
 

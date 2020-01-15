@@ -1,6 +1,6 @@
-  <app-add-client *ngIf="addClient" (closed)="openOrCloseForm()"></app-add-client>
+  <app-add-client  *ngIf="addClient" (closed)="openOrCloseForm()"></app-add-client>
 
-  <div *ngIf="!addClient" class="toolsBar">
+  <div class="toolsBar back" [ngClass]="{'back': addClient}">
     <i [inlineSVG]="'../../../../assets/toolsBarAssets/ajouter.svg'" class="addClient" (click)="openOrCloseForm()"></i>
     <mat-form-field>
       <mat-label>Rechercher</mat-label>
@@ -9,7 +9,7 @@
     </mat-form-field>
   </div>
 
-  <div *ngIf="!addClient" class="example-container mat-elevation-z0">
+  <div class="example-container mat-elevation-z0 back" [ngClass]="{'back': addClient}">
     <table mat-table [dataSource]="dataSource" matSort>
 
       <ng-container matColumnDef="identifier">

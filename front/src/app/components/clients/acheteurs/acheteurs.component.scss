@@ -17,6 +17,7 @@
   box-shadow: 5px;
   border-bottom: 1px solid $base-color;
   z-index: 1;
+  transition-duration: 1s;
 
   .addClient {
     margin-left: 10%;
@@ -26,7 +27,6 @@
   }
   .addClient:hover {
     cursor: pointer;
-    transform: scale(1.2);
     fill:$base-color-opacity;
   }
 
@@ -44,6 +44,7 @@
   margin-left: 10px;
   margin-top: 81px;
   background-color: $base-white;
+  transition-duration: 1s;
 
   table {
     width: 100%;
@@ -62,4 +63,9 @@
     position: sticky;
     z-index: 10;
   }
+}
+
+.back {
+  opacity: 0.1;
+  pointer-events: none;
 }
