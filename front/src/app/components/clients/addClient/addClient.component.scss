@@ -10,7 +10,7 @@
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
   z-index: 2000;
   display: flex;
-  animation-duration: 1s;
+  animation-duration: 0.3s;
   animation-name: slidein;
 
   .closeForm {
@@ -21,6 +21,45 @@
   .closeForm:hover {
     cursor: pointer;
   }
+
+  .question {
+    position: absolute;
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 100px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $base-color;
+  }
+
+  .clientType {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    color: black;
+    width: 70%;
+    height: 250px;
+    margin-left: 15%;
+    margin-top: 50%;
+    transform: translateY(-50%);
+    animation-duration: 1s;
+    animation-name: appearin;
+    .type {
+      width: 45%;
+      height: 100%;
+      background-color: $base-white;
+      border: 6px solid $base-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle;
+    }
+    .type:hover {
+      cursor: pointer;
+      background-color: $base-color;
+      color: white;
+    }
+  }
 }
 
 @keyframes slidein {
@@ -30,5 +69,15 @@
 
   to {
     height: calc(100vh - 90px);
+  }
+}
+
+@keyframes appearin {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }

@@ -1,3 +1,8 @@
 <div class="formWrapper">
   <i class="closeForm" [inlineSVG]="'../../../../assets/sharedAssets/close.svg'" (click)="close()"></i>
+  <p *ngIf="!clientTypeChosed" class="question">Choisissez le type de client à ajouter :</p>
+  <div *ngIf="!clientTypeChosed" class="clientType">
+    <div class="type" (click)="chooseClientType('particulier')">PARTICULIER</div>
+    <div class="type" (click)="chooseClientType('entreprise')">ENTREPRISE</div>
+  </div>
 </div>

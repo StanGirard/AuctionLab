@@ -8,6 +8,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class AddClientComponent implements OnInit {
 
   @Output() closed = new EventEmitter<boolean>();
+  public clientTypeChosed = false;
+  public clientType = '';
 
   constructor() { }
 
@@ -18,4 +20,8 @@ export class AddClientComponent implements OnInit {
     this.closed.emit(true);
   }
 
+  chooseClientType(type: string) {
+    this.clientType = type;
+    this.clientTypeChosed = true;
+  }
 }
