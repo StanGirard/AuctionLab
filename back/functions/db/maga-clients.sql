@@ -4,6 +4,7 @@ CREATE TABLE `Clients` (
   `entreprise` boolean,
   `acheteur` boolean,
   `vendeur` boolean,
+  `commentaire` varchar(255),
   `vip` varchar(255),
   `created_at` timestamp
 );
