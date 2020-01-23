@@ -30,6 +30,8 @@ export class AcheteursComponent implements OnInit {
 
   constructor(private apiService: ApiService) {}
 
+  
+
   ngOnInit() {
     this.apiService.getAcheteurs().subscribe(
       data => {
@@ -43,7 +45,9 @@ export class AcheteursComponent implements OnInit {
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
       }
+      
     );
+    this.apiService.createClient().subscribe(success => console.log("Done"),error => alert(error));
   }
 
   applyFilter(filterValue: string) {
